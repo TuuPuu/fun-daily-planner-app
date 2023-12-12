@@ -110,6 +110,35 @@
       }
       // call the function- replace later with event listener
       displayCurrentDay();
+
+      // FUNCTION TO UPDATE ROW BASED ON TIME
+      function applyRowColors() {
+        const currentHour = dayjs().hour();
+
+        console.log(currentHour);
+
+        const rows = document.querySelectorAll("#timeBlockTable tbody tr");
+
+        for (let i = 0; i < rows.length; i++) {
+          const row = rows[i];
+          // Extract the hour from the time value, e.g., "09AM" to 9
+
+          const rowHour = row.getAttribute("data-hour");
+          // console.log(rowHour);
+
+          if (rowHour < currentHour) {
+            // Time has passed, apply grey color
+            row.classList.add("past");
+          } else if (rowHour > currentHour) {
+            // Time is in the future, apply green color
+            row.classList.add("future");
+          } else {
+            row.classList.add("present");
+          }
+        }
+      }
+
+      applyRowColors();
     </script>
   </body>
 </html>

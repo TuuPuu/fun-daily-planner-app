@@ -1,6 +1,6 @@
-#Fun Daily Planner Application
+# Fun Daily Planner Application
 
-##Description
+## Description
 This is a fun and functional daily planner app that allows users to manage their time using built in API data designed to streamline your workday organisation.
 
 Key Features:
@@ -16,18 +16,20 @@ Save to Local Storage -> The app allows users to save entered events by clicking
 
 
 
-##Installation
+## Installation
 To run the Work Day Scheduler, you simply need to access via the URL and interact with the elements on the page. 
 URL: https://tuupuu.github.io/fun-daily-planner-app/
 REPO: https://github.com/TuuPuu/fun-daily-planner-app
 
 
-##Credits
+## Credits
 jQuery - Used for DOM manipulation.
 Day.js - A minimalist JavaScript library for handling dates and times.
 Chat GPT - to debug and work on creating local storage access.
 
 License - This project uses the MIT License.
+
+
 
 
 

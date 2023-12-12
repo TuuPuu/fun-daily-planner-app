@@ -18,8 +18,8 @@ Save to Local Storage -> The app allows users to save entered events by clicking
 
 ##Installation
 To run the Work Day Scheduler, you simply need to access via the URL and interact with the elements on the page. 
-URL:
-REPO:
+URL: https://tuupuu.github.io/fun-daily-planner-app/
+REPO: https://github.com/TuuPuu/fun-daily-planner-app
 
 
 ##Credits

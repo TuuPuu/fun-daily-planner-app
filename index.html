@@ -106,55 +106,63 @@
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
 
     <script>
-      // DISPLAY CURRENT DATE //
+      // PLACEMENT OF CODE BLOCKS INTO THAT INITIALISE ONCE DOM LOADED
 
-      function displayCurrentDay() {
-        // access html element in order to display current date
-        const currentDayElement = document.getElementById("currentDay");
-        // store the data fetched from api into a variable
-        const currentDate = dayjs().format("dddd, MMMM D, YYYY");
-        // replace text of html id element to given message
-        currentDayElement.textContent = `🌼 Today is ${currentDate} 🌼`;
-      }
-      // call the function- replace later with event listener
-      displayCurrentDay();
+      document.addEventListener("DOMContentLoaded", function () {
+        // DISPLAY CURRENT DATE //
+        function displayCurrentDay() {
+          // access html element in order to display current date
+          const currentDayElement = document.getElementById("currentDay");
+          // store the data fetched from api into a variable
+          const currentDate = dayjs().format("dddd, MMMM D, YYYY");
+          // replace text of html id element to given message
+          currentDayElement.textContent = `🌼 Today is ${currentDate} 🌼`;
+        }
 
-      // FUNCTION TO UPDATE ROW BASED ON TIME
-      function applyRowColors() {
-        const currentHour = dayjs().hour();
+        // FUNCTION TO UPDATE ROW BASED ON TIME
+        function applyRowColors() {
+          // access hour from api
+          const currentHour = dayjs().hour();
+          // access table row
+          const rows = document.querySelectorAll("#timeBlockTable tbody tr");
 
-        const rows = document.querySelectorAll("#timeBlockTable tbody tr");
+          // loop through data in table to check time
+          for (let i = 0; i < rows.length; i++) {
+            const row = rows[i];
+            // access the data-hour attribute for each row and change to integer
+            const rowHour = parseInt(
+              row.querySelector("td:first-child").textContent,
+              10
+            );
+            const inputBox = row.querySelector('input[type="text"]');
 
-        for (let i = 0; i < rows.length; i++) {
-          const row = rows[i];
-          // Access the data-hour attribute for each row
-          const rowHour = parseInt(
-            row.querySelector("td:first-child").textContent,
-            10
-          );
-          const inputBox = row.querySelector('input[type="text"]');
+            // tests to check if accessing data is working correctly
+            // console.log(rowHour);
+            // console.log(currentHour);
 
-          // tests to check if accessing data is working correctly
-          console.log(rowHour);
-          console.log(currentHour);
+            if (rowHour < currentHour) {
+              // Time has passed, apply grey color
+              row.classList.add("past");
+              inputBox.setAttribute("readonly", "true");
+              inputBox.placeholder = "Event has passed";
 
-          if (rowHour < currentHour) {
-            // Time has passed, apply grey color
-            row.classList.add("past");
-            inputBox.setAttribute("readonly", "true");
-            inputBox.placeholder = "Event has passed";
+              // Time is in the future, apply green color
+            } else if (rowHour > currentHour) {
+              row.classList.add("future");
+              inputBox.placeholder = "Enter your future event";
 
-            // Time is in the future, apply green color
-          } else if (rowHour > currentHour) {
-            row.classList.add("future");
-          } else {
-            // Current hour, apply red color
-            row.classList.add("present");
+              // Current hour, apply red color
+            } else {
+              row.classList.add("present");
+              inputBox.placeholder = "Enter your event";
+            }
           }
         }
-      }
 
-      applyRowColors();
+        // FINALLY, CALL THE FUNCTIONS
+        displayCurrentDay();
+        applyRowColors();
+      });
     </script>
   </body>
 </html>

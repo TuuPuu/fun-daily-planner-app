@@ -148,6 +148,8 @@
             );
             const inputBox = row.querySelector('input[type="text"]');
 
+            // creating a variable tied to hours to save input data in
+
             // tests to check if accessing data is working correctly
             // console.log(rowHour);
             // console.log(currentHour);
@@ -170,6 +172,10 @@
             }
           }
         }
+
+        // FUNCTION TO CREATE SAVED EVENTS IN EACH ROW (ROWHOUR)
+
+        const saveButton = document.querySelectorAll("saveBtn");
 
         // FINALLY, CALL THE FUNCTIONS
         displayCurrentDay();

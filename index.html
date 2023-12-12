@@ -42,6 +42,7 @@
           <tr>
             <th>Hour</th>
             <th>Event</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -49,46 +50,55 @@
           <tr>
             <td class="hour">09AM</td>
             <td><input type="text" data-hour="9" /></td>
+            <td><button class="saveBtn">Save Event</button></td>
           </tr>
 
           <tr>
             <td class="hour">10AM</td>
             <td><input type="text" data-hour="10" /></td>
+            <td><button class="saveBtn">Save Event</button></td>
           </tr>
 
           <tr>
             <td class="hour">11AM</td>
             <td><input type="text" data-hour="11" /></td>
+            <td><button class="saveBtn">Save Event</button></td>
           </tr>
 
           <tr>
             <td class="hour">12PM</td>
             <td><input type="text" data-hour="12" /></td>
+            <td><button class="saveBtn">Save Event</button></td>
           </tr>
 
           <tr>
             <td class="hour">13PM</td>
             <td><input type="text" data-hour="13" /></td>
+            <td><button class="saveBtn">Save Event</button></td>
           </tr>
 
           <tr>
             <td class="hour">14PM</td>
             <td><input type="text" data-hour="14" /></td>
+            <td><button class="saveBtn">Save Event</button></td>
           </tr>
 
           <tr>
             <td class="hour">15PM</td>
             <td><input type="text" data-hour="15" /></td>
+            <td><button class="saveBtn">Save Event</button></td>
           </tr>
 
           <tr>
             <td class="hour">16PM</td>
             <td><input type="text" data-hour="16" /></td>
+            <td><button class="saveBtn">Save Event</button></td>
           </tr>
 
           <tr>
             <td class="hour">17PM</td>
             <td><input type="text" data-hour="17" /></td>
+            <td><button class="saveBtn">Save Event</button></td>
           </tr>
         </tbody>
       </table>
@@ -125,6 +135,8 @@
           const currentHour = dayjs().hour();
           // access table row
           const rows = document.querySelectorAll("#timeBlockTable tbody tr");
+
+          const saveButton = document.querySelectorAll("saveBtn");
 
           // loop through data in table to check time
           for (let i = 0; i < rows.length; i++) {

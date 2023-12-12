@@ -85,11 +85,18 @@ a {
   border-bottom-right-radius: 15px;
   background-color: #06aed5;
   color: white;
+  padding: 10px;
 }
 
 .saveBtn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
+}
+
+.past .saveBtn {
+  background-color: rgb(192, 187, 187);
+  cursor: not-allowed;
+  color: gray;
 }
 
 #currentDay {
@@ -126,7 +133,7 @@ th {
   padding: 10px;
 }
 td {
-  border: 2px solid lightskyblue;
+  border: 2px solid #06aed5;
   padding: 10px;
   border-bottom: 2px solid #06aed5;
   border-radius: 5px;

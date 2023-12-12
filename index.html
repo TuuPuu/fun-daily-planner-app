@@ -27,11 +27,71 @@
   <body>
     <header>
       <h1 class="display-3">Work Day Scheduler</h1>
-      <p class="lead">A simple calendar app for all your scheduling needs 🌞</p>
+      <p class="lead">
+        A simple calendar app for all your workday scheduling needs 🌞
+      </p>
       <p id="currentDay" class="lead"></p>
     </header>
+
     <div class="container">
-      <!-- Timeblocks go here -->
+      <!-- CALENDAR TIME BLOCKS -->
+      <table id="timeBlockTable">
+        <!-- using a html table to create template for timeblock -->
+        <thead>
+          <!--remember, these are table headings -->
+          <tr>
+            <th>Hour</th>
+            <th>Event</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- and this part is the table rows and data-->
+          <tr>
+            <td>09AM</td>
+            <td><input type="text" data-hour="9" /></td>
+          </tr>
+
+          <tr>
+            <td>10AM</td>
+            <td><input type="text" data-hour="10" /></td>
+          </tr>
+
+          <tr>
+            <td>11AM</td>
+            <td><input type="text" data-hour="11" /></td>
+          </tr>
+
+          <tr>
+            <td>12PM</td>
+            <td><input type="text" data-hour="12" /></td>
+          </tr>
+
+          <tr>
+            <td>1PM</td>
+            <td><input type="text" data-hour="13" /></td>
+          </tr>
+
+          <tr>
+            <td>2PM</td>
+            <td><input type="text" data-hour="14" /></td>
+          </tr>
+
+          <tr>
+            <td>3PM</td>
+            <td><input type="text" data-hour="15" /></td>
+          </tr>
+
+          <tr>
+            <td>4PM</td>
+            <td><input type="text" data-hour="16" /></td>
+          </tr>
+
+          <tr>
+            <td>5PM</td>
+            <td><input type="text" data-hour="17" /></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
